@@ -154,17 +154,3 @@ Same validation as POST. Partial updates accepted (all fields optional).
 | Server-side pagination (50/page) | Browser never receives more than 50 records. The 45-second freeze is eliminated by design. |
 
 ---
-
-## Video Demo Script (3-5 min)
-
-1. **[0:00-0:30]** Open the Analytics tab. Explain the business problem: 50k SKUs, browser crashing, stockouts costing hundreds of thousands. Show the KPI cards loading instantly.
-
-2. **[0:30-1:30]** Open DevTools Network tab. Click the Analytics tab again. Show the single `/api/analytics` request — Postman-style timing. Point out it returns all KPIs in one request.
-
-3. **[1:30-2:30]** Switch to Inventory tab. Open DevTools Network. Show only 50 records load (check the `data` array length in the response). Type in the search box — show the request fires only after you stop typing (debounce). Show the `pagination` object in the response.
-
-4. **[2:30-3:30]** Open Postman. Hit `GET /api/inventory?search=laptop&limit=5`. Show the time in the top right. Hit `GET /api/analytics`. Show sub-500ms response time.
-
-5. **[3:30-4:00]** Click Export CSV. Show the file downloads. Test validation: POST to `/api/inventory` with `price: 10, cost: 50` — show the 400 error with the specific message.
-
-6. **[4:00-4:30]** Close — "The business outcome: warehouse managers can now load any inventory view in under 100ms. Stockout alerts are real-time. The browser never freezes."
