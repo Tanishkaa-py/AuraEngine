@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aura Engine — Enterprise Inventory</title>
+    <style>
+  :root {
+    --bg: #F0F2F5;
+    --card-bg: #FFFFFF;
+    --border: #E5E7EB;
+    --text-primary: #111827;
+    --text-muted: #6B7280;
+    --row-hover: #F9FAFB;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0F1117;
+      --card-bg: #1A1D24;
+      --border: #2D3139;
+      --text-primary: #F1F3F9;
+      --text-muted: #9CA3AF;
+      --row-hover: #22262E;
+    }
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; }
+  input, select, button { font-family: inherit; }
+
+  /* Responsive KPI grid */
+  @media (max-width: 1100px) {
+    .kpi-grid { grid-template-columns: repeat(3, 1fr) !important; }
+  }
+  @media (max-width: 700px) {
+    .kpi-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  }
+</style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
